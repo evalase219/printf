@@ -41,6 +41,11 @@ int _printf(const char *format, ...)
 			count += conv_str(va_arg(pm, int));
 			z++;
 		}
+		else if (format[z + 1] == 'b')
+		{
+			count += conv_bin(va_arg(pm, int));
+			z++;
+		}
 	}
 	va_end(pm);
 	return (count);
