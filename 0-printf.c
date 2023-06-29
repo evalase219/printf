@@ -36,6 +36,11 @@ int _printf(const char *format, ...)
 			count += putchr('%');
 			z++;
 		}
+		else if (format[z + 1] == 'd' || format[z + 1] == 'i')
+		{
+			count += conv_str(va_arg(pm, int));
+			z++;
+		}
 	}
 	va_end(pm);
 	return (count);
