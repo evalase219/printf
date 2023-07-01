@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#define MAX 64
 /**
  * conv_bin - function that converts unsigned integers to binary
  * @num: the number to be converted
@@ -8,10 +9,9 @@
 int conv_bin(int num)
 {
 	char *str, store;
-	unsigned int s = 0;
 	int c, b, a = 0, n = 0, z = 0, y = 0, len = 0, mod = 0;
 
-	str = (char *) malloc(sizeof(char) * s);
+	str = (char *) malloc(sizeof(char) * MAX);
 	if (str == NULL)
 		return (-1);
 	if (num == 0)
