@@ -46,6 +46,26 @@ int _printf(const char *format, ...)
 			count += conv_bin(va_arg(pm, int));
 			z++;
 		}
+		else if (format[z + 1] == 'u')
+		{
+			count += unsgnd_digit(va_arg(pm, int));
+			z++;
+		}
+		else if (format[z + 1] == 'o')
+		{
+			count += unsgnd_oct(va_arg(pm, int));
+			z++;
+		}
+		else if (format[z + 1] == 'x')
+		{
+			count += unsgnd_hex_low(va_arg(pm, int));
+			z++;
+		}
+		else if (format[z + 1] == 'X')
+		{
+			count += unsgnd_hex_up(va_arg(pm, int));
+			z++;
+		}
 	}
 	va_end(pm);
 	return (count);
