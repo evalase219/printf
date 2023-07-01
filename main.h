@@ -15,6 +15,6 @@ int unsgnd_digit(unsigned int num);
 int unsgnd_oct(unsigned int num);
 int unsgnd_hex_low(unsigned int num);
 int unsgnd_hex_up(unsigned int num);
-void write_buffer(char *buffer);
+int write_buffer(char *buffer);
 
 #endif
